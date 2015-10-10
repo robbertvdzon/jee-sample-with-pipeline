@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causes>
+        <hudson.model.Cause_-UpstreamCause>
+          <upstreamProject>build docker container</upstreamProject>
+          <upstreamUrl>job/build%20docker%20container/</upstreamUrl>
+          <upstreamBuild>16</upstreamBuild>
+          <upstreamCauses>
+            <hudson.model.Cause_-UpstreamCause>
+              <upstreamProject>deploy war</upstreamProject>
+              <upstreamUrl>job/deploy%20war/</upstreamUrl>
+              <upstreamBuild>21</upstreamBuild>
+              <upstreamCauses>
+                <hudson.model.Cause_-UpstreamCause>
+                  <upstreamProject>test</upstreamProject>
+                  <upstreamUrl>job/test/</upstreamUrl>
+                  <upstreamBuild>41</upstreamBuild>
+                  <upstreamCauses>
+                    <hudson.triggers.SCMTrigger_-SCMTriggerCause/>
+                  </upstreamCauses>
+                </hudson.model.Cause_-UpstreamCause>
+              </upstreamCauses>
+            </hudson.model.Cause_-UpstreamCause>
+          </upstreamCauses>
+        </hudson.model.Cause_-UpstreamCause>
+      </causes>
+    </hudson.model.CauseAction>
+  </actions>
+  <queueId>84</queueId>
+  <timestamp>1444490043441</timestamp>
+  <startTime>1444490043442</startTime>
+  <result>SUCCESS</result>
+  <duration>14</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/var/jenkins_home/jobs/cucumber tests/workspace</workspace>
+  <hudsonVersion>1.609.3</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>

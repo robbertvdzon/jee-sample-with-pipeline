@@ -1,0 +1,9 @@
+Started on Oct 10, 2015 5:31:00 PM
+Using strategy: Default
+[poll] Last Built Revision: Revision 2ef414e6b04a794edec2f8a1c2fe367e06c9d6f3 (refs/remotes/origin/master)
+ > git --version # timeout=10
+ > git -c core.askpass=true ls-remote -h https://github.com/robbertvdzon/jsf-simple-sample.git # timeout=10
+Found 1 remote heads on https://github.com/robbertvdzon/jsf-simple-sample.git
+[poll] Latest remote head revision on refs/heads/master is: 2ef414e6b04a794edec2f8a1c2fe367e06c9d6f3 - already built by 42
+Done. Took 0.66 sec
+No changes

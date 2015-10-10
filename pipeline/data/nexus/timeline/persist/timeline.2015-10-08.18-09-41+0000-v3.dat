@@ -1,0 +1,7 @@
+}²ê“Å„*SYSTEMBOOT"0
+message%Started Nexus (version 2.11.4-01 OSS)"
+actionBOOT"$
+date2015-10-08 18:09:41.682+0000°ã¸ôÆ„*SYSTEMREPO_PSTATUS_CHANGES"Â
+message¶The proxy mode of repository 'Codehaus Snapshots' (ID='codehaus-snapshots') was set to Blocked (auto). The previous state was Allow. Last detected transport error: Transport error while executing GET method [repositoryId="codehaus-snapshots", requestPath="/", remoteUrl="https://nexus.codehaus.org/snapshots/"]"
+actionREPO_PSTATUS_CHANGES"$
+date2015-10-08 19:11:01.731+0000

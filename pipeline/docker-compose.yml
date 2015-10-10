@@ -1,0 +1,32 @@
+jenkins:
+  build: docker/jenkins
+  ports:
+    - "8080:8080"
+  environment:
+  volumes:
+    - ./data/jenkins:/var/jenkins_home
+    - ./src:/src
+    - /var/run/docker.sock:/var/run/docker.sock 
+    - /usr/bin/docker:/usr/bin/docker 
+    - /usr/lib/x86_64-linux-gnu/libapparmor.so.1.1.0:/usr/lib/x86_64-linux-gnu/libapparmor.so.1
+
+nexus:
+  image: sonatype/nexus
+  ports:
+    - "8081:8081"
+  environment:
+  volumes:
+    - ./data/nexus:/sonatype-work
+
+registry:
+  image: registry
+  ports:
+    - "5000:5000"
+  environment:
+    - AWS_BUCKET=acme-docker 
+    - STORAGE_PATH=/registry 
+    - AWS_KEY=AKIAHSHB43HS3J92MXZ 
+    - AWS_SECRET=xdDowwlK7TJajV1Y7EoOZrmuPEJlHYcNP2k4j49T 
+    - SEARCH_BACKEND=sqlalchemy 
+  volumes:
+    - ./data/registry:/tmp/registry-dev

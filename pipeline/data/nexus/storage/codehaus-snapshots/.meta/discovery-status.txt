@@ -1,0 +1,6 @@
+#Nexus discovery status
+#Sat Oct 10 17:09:41 UTC 2015
+lastDiscoveryStrategy=none
+lastDiscoveryStatus=ENABLED_NOT_POSSIBLE
+lastDiscoveryTimestamp=1444496981682
+lastDiscoveryMessage=Proxy repository is blocked.

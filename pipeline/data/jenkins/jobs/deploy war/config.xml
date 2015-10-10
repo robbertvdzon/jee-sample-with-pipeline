@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <jenkins.triggers.ReverseBuildTrigger>
+      <spec></spec>
+      <upstreamProjects>test</upstreamProjects>
+      <threshold>
+        <name>SUCCESS</name>
+        <ordinal>0</ordinal>
+        <color>BLUE</color>
+        <completeBuild>true</completeBuild>
+      </threshold>
+    </jenkins.triggers.ReverseBuildTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>cd /src/project
+echo FIND VERSION
+docker run -i --rm -v /workspace/jee-sample-with-pipeline/pipeline/data/.m2:/root/.m2 -v /workspace/jee-sample-with-pipeline/:/usr/src/mymaven -w /usr/src/mymaven maven:3.2-jdk-8 mvn -Dexec.executable=&quot;echo&quot; \
+    -Dexec.args=&apos;${project.version}&apos; \
+    -Dexec.outputFile=&quot;/usr/src/mymaven/current_project_version&quot; \
+    --non-recursive \
+    --batch-mode \
+    org.codehaus.mojo:exec-maven-plugin:1.3.1:exec &gt; /dev/null 2&gt;&amp;1 ||
+    { echo &quot;Maven invocation failed!&quot; 1&gt;&amp;2; exit 1; }
+
+cat current_project_version
+
+echo FIND ARTIFACTID
+docker run -i --rm  -v /workspace/jee-sample-with-pipeline/pipeline/data//.m2:/root/.m2 -v /workspace/jee-sample-with-pipeline:/usr/src/mymaven -w /usr/src/mymaven maven:3.2-jdk-8 mvn -Dexec.executable=&quot;echo&quot; \
+    -Dexec.args=&apos;${project.artifactId}&apos; \
+    -Dexec.outputFile=&quot;/usr/src/mymaven/current_project_artifactId&quot; \
+    --non-recursive \
+    --batch-mode \
+    org.codehaus.mojo:exec-maven-plugin:1.3.1:exec &gt; /dev/null 2&gt;&amp;1 ||
+    { echo &quot;Maven invocation failed!&quot; 1&gt;&amp;2; exit 1; }
+
+cat current_project_artifactId
+
+echo FIND PROJECTGROUPID
+docker run -i --rm  -v /workspace/jee-sample-with-pipeline/pipeline/data/.m2:/root/.m2 -v /workspace/jee-sample-with-pipeline:/usr/src/mymaven -w /usr/src/mymaven maven:3.2-jdk-8 mvn -Dexec.executable=&quot;echo&quot; \
+    -Dexec.args=&apos;${project.groupId}&apos; \
+    -Dexec.outputFile=&quot;/usr/src/mymaven/current_project_groupId&quot; \
+    --non-recursive \
+    --batch-mode \
+    org.codehaus.mojo:exec-maven-plugin:1.3.1:exec &gt; /dev/null 2&gt;&amp;1 ||
+    { echo &quot;Maven invocation failed!&quot; 1&gt;&amp;2; exit 1; }
+
+cat current_project_groupId
+
+export VERSION=`cat current_project_version`
+export GROUPID=`cat current_project_groupId`
+export ARTIFACTID=`cat current_project_artifactId`
+echo UPLOAD TO NEXUS
+curl --request PUT --user admin:admin123 http://172.17.42.1:8081/content/repositories/releases/&quot;$GROUPID&quot;/&quot;$ARTIFACTID&quot;/&quot;$ARTIFACTID&quot;-&quot;$VERSION&quot;.war --data @./target/&quot;$ARTIFACTID&quot;-&quot;$VERSION&quot;.war  -H Content-Type:application/java-archive --verbose
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

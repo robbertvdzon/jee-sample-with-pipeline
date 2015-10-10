@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<security>
+  <version>2.0.5</version>
+  <users>
+    <user>
+      <id>deployment</id>
+      <firstName>Deployment</firstName>
+      <lastName>User</lastName>
+      <password>b2a0e378437817cebdf753d7dff3dd75483af9e0</password>
+      <status>active</status>
+      <email>changeme1@yourcompany.com</email>
+    </user>
+    <user>
+      <id>anonymous</id>
+      <firstName>Nexus</firstName>
+      <lastName>Anonymous User</lastName>
+      <password>$shiro1$SHA-512$1024$MonsWVkoxLDTkG0RP7K2/Q==$SgPOJIcuQw0ZopvC/V+DiM/ePdh3TqQ5ab0NnNjr16MKvWhc3ZAeJhDCWFAOh2S9TIvzJjlAQON1Zu/jgHFP7g==</password>
+      <status>active</status>
+      <email>changeme2@yourcompany.com</email>
+    </user>
+    <user>
+      <id>admin</id>
+      <firstName>Administrator</firstName>
+      <lastName>User</lastName>
+      <password>$shiro1$SHA-512$1024$3BFtNSOWkjeupVN0OIufsw==$koF9ujgfFui0KS+Bx177cqG1H27SxWY1PnCEafNQD8jJpSGi3dk9hlp405Fze4lnbX8BBNw6+cAAe5OLCzi03g==</password>
+      <status>active</status>
+      <email>changeme@yourcompany.com</email>
+    </user>
+  </users>
+  <userRoleMappings>
+    <userRoleMapping>
+      <userId>deployment</userId>
+      <source>default</source>
+      <roles>
+        <role>nx-deployment</role>
+        <role>repository-any-full</role>
+      </roles>
+    </userRoleMapping>
+    <userRoleMapping>
+      <userId>anonymous</userId>
+      <source>default</source>
+      <roles>
+        <role>anonymous</role>
+        <role>repository-any-read</role>
+      </roles>
+    </userRoleMapping>
+    <userRoleMapping>
+      <userId>admin</userId>
+      <source>default</source>
+      <roles>
+        <role>nx-admin</role>
+      </roles>
+    </userRoleMapping>
+  </userRoleMappings>
+</security>

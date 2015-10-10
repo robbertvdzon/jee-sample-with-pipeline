@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causes>
+        <hudson.model.Cause_-UpstreamCause>
+          <upstreamProject>deploy war</upstreamProject>
+          <upstreamUrl>job/deploy%20war/</upstreamUrl>
+          <upstreamBuild>17</upstreamBuild>
+          <upstreamCauses>
+            <hudson.model.Cause_-UserIdCause/>
+          </upstreamCauses>
+        </hudson.model.Cause_-UpstreamCause>
+      </causes>
+    </hudson.model.CauseAction>
+  </actions>
+  <queueId>64</queueId>
+  <timestamp>1444469197054</timestamp>
+  <startTime>1444469197055</startTime>
+  <result>SUCCESS</result>
+  <duration>6</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/var/jenkins_home/jobs/build docker container/workspace</workspace>
+  <hudsonVersion>1.609.3</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>
