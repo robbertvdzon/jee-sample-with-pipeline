@@ -1,0 +1,74 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /var/jenkins_home/jobs/test/workspace
+[workspace] $ /bin/sh -xe /tmp/hudson3830393582003821383.sh
++ cd /src
++ git pull
+From https://github.com/robbertvdzon/jee-sample-with-pipeline
+   c1a6eb9..4d2ef5c  master     -> origin/master
+Updating c1a6eb9..4d2ef5c
+Fast-forward
+ pom.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
++ docker run -i --rm -v /root/.m2:/root/.m2 -v /workspace/jee-sample-with-pipeline:/usr/src/mymaven -w /usr/src/mymaven maven:3.2-jdk-8 mvn clean install
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for contacts:contactsbackend:war:1.1.21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-deploy-plugin is missing. @ line 120, column 9
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building contactdb 1.1.21
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ contactsbackend ---
+[INFO] Deleting /usr/src/mymaven/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ contactsbackend ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- jrebel-maven-plugin:1.1.5:generate (generate-rebel-xml) @ contactsbackend ---
+[INFO] Processing contacts:contactsbackend with packaging war
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ contactsbackend ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to /usr/src/mymaven/target/classes
+[WARNING] /usr/src/mymaven/src/main/java/com/vdzon/samples/uselesscontacts/service/ContactServiceBean.java: /usr/src/mymaven/src/main/java/com/vdzon/samples/uselesscontacts/service/ContactServiceBean.java uses unchecked or unsafe operations.
+[WARNING] /usr/src/mymaven/src/main/java/com/vdzon/samples/uselesscontacts/service/ContactServiceBean.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ contactsbackend ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /usr/src/mymaven/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ contactsbackend ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ contactsbackend ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-war-plugin:2.4:war (default-war) @ contactsbackend ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [contactsbackend] in [/usr/src/mymaven/target/contactsbackend-1.1.21]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/usr/src/mymaven/src/main/webapp]
+[INFO] Webapp assembled in [210 msecs]
+[INFO] Building war: /usr/src/mymaven/target/contactsbackend-1.1.21.war
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ contactsbackend ---
+[INFO] Installing /usr/src/mymaven/target/contactsbackend-1.1.21.war to /root/.m2/repository/contacts/contactsbackend/1.1.21/contactsbackend-1.1.21.war
+[INFO] Installing /usr/src/mymaven/pom.xml to /root/.m2/repository/contacts/contactsbackend/1.1.21/contactsbackend-1.1.21.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6.556 s
+[INFO] Finished at: 2015-10-10T18:44:53+00:00
+[INFO] Final Memory: 18M/94M
+[INFO] ------------------------------------------------------------------------
++ docker run -i --rm -v /root/.m2:/root/.m2 -v /workspace/jee-sample-with-pipeline:/usr/src/mymaven -w /usr/src/mymaven maven:3.2-jdk-8 chmod -R a+rw /usr/src/mymaven/target
+Warning: you have no plugins providing access control for builds, so falling back to legacy behavior of permitting any downstream builds to be triggered
+Triggering a new build of [8mha:AAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAwuoBn6WflJ+impBTn5lapGBuWJRfoA1eiZLMcAAAA=[0mdeploy war
+Finished: SUCCESS
