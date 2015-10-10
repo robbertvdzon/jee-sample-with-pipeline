@@ -1,6 +1,6 @@
 #Nexus discovery status
-#Sat Oct 10 17:09:41 UTC 2015
-lastDiscoveryStrategy=none
-lastDiscoveryStatus=ENABLED_NOT_POSSIBLE
-lastDiscoveryTimestamp=1444496981682
-lastDiscoveryMessage=Proxy repository is blocked.
+#Sat Oct 10 18:43:35 UTC 2015
+lastDiscoveryStrategy=prefix-file
+lastDiscoveryStatus=ERROR
+lastDiscoveryTimestamp=1444502615649
+lastDiscoveryMessage=nexus.codehaus.org

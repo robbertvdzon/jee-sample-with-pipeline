@@ -24,7 +24,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd /src/project
+      <command>cd /src
 echo FIND VERSION
 docker run -i --rm -v /workspace/jee-sample-with-pipeline/pipeline/data/.m2:/root/.m2 -v /workspace/jee-sample-with-pipeline/:/usr/src/mymaven -w /usr/src/mymaven maven:3.2-jdk-8 mvn -Dexec.executable=&quot;echo&quot; \
     -Dexec.args=&apos;${project.version}&apos; \

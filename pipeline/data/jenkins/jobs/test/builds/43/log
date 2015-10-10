@@ -1,0 +1,9 @@
+Started by an SCM change
+Building in workspace /var/jenkins_home/jobs/test/workspace
+[workspace] $ /bin/sh -xe /tmp/hudson7546067806179946867.sh
++ git pull
+fatal: Not a git repository (or any parent up to mount point /var/jenkins_home)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+Build step 'Execute shell' marked build as failure
+Warning: you have no plugins providing access control for builds, so falling back to legacy behavior of permitting any downstream builds to be triggered
+Finished: FAILURE
