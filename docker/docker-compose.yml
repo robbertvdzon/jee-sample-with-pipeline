@@ -1,0 +1,17 @@
+mysql:
+  build: mysqldb
+  ports:
+    - "1081:80"
+  environment:
+  volumes:
+
+wildfly:
+  build: wildfly
+  ports:
+    - "8787:8787"
+    - "9990:9990"
+    - "8080:8080"
+  links:
+    - mysqldb
+  environment:
+  volumes:
