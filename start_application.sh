@@ -1,6 +1,4 @@
 #!/bin/bash
-chown -R 1000:1000 .
-chown -R 200:200 pipeline/data/nexus
 
-cd pipeline
+cd docker
 docker-compose up -d
