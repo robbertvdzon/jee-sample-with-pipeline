@@ -1,4 +1,4 @@
-mysql:
+mysqldb:
   build: mysql
   ports:
     - "1081:80"
