@@ -1,3 +1,7 @@
 ./src/
 ./.m2/
 ./target
+./current_project_version
+./current_project_groupId
+./current_project_artifactId
+./pom.xml.versionsBackup
