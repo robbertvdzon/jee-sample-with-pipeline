@@ -1,5 +1,5 @@
 # Pull base image.
-FROM dockerfile/ubuntu
+FROM ubuntu:trusty
 MAINTAINER Robbert vd Zon <robbert@vdzon.com>
 
 # Install Haproxy.

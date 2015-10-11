@@ -38,3 +38,7 @@ docker run -d -it -p $WILDFLY_SSH_PORT:22 -p $WILDFLY_DEBUG_PORT:8787 -p $WILDFL
 # build and run apache container
 docker build -t robbertvdzon/$DOCKERNAME_APACHE ./apache
 docker run -d -it -p $APACHE_SSH_PORT:22 -p $APACHE_PORT:80 --name $DOCKERNAME_APACHE --link $DOCKERNAME_WILDFLY:wildfly robbertvdzon/$DOCKERNAME_APACHE
+
+#haproxy
+docker build -t robbertvdzon/haproxy ./haproxy
+docker run -d -it -p 8085:8085 -p 8086:8086 --name haproxy robbertvdzon/haproxy
